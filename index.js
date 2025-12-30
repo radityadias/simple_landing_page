@@ -1,5 +1,6 @@
 var count = 0
 var navbarMenuState = 0
+var navbarStatus = "open" | "closed"
 
 setColors();
 console.log("Navbar Menu State: " + navbarMenuState);
@@ -53,9 +54,11 @@ function setNavbarBehavior(){
     if (navbarMenuState == 0) {
         document.getElementById("navbar-menu").classList.remove("hidden");
         document.getElementsByTagName("body")[0].classList.add("bg-black/50");
+        navbarStatus = "open"
     } else {
         document.getElementById("navbar-menu").classList.add("hidden");
         document.getElementsByTagName("body")[0].classList.remove("bg-black/50");
+        navbarStatus = "closed"
     }
 }
 
@@ -70,7 +73,7 @@ function setColors() {
 }
 
 function onNavbarLinkClick() {
-    if (navbarMenuState == 0) {
+    if (navbarStatus == "closed") {
         return
     } else {
         setNavbarState();
