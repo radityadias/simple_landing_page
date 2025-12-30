@@ -3,8 +3,6 @@ var navbarMenuState = 0
 var navbarStatus = "open" | "closed"
 
 setColors();
-console.log("Navbar Menu State: " + navbarMenuState);
-
 
 document.getElementById('button-month').addEventListener('click', function() {
     const x = document.getElementsByClassName('price');
@@ -46,8 +44,6 @@ function setNavbarState(){
     else{
         navbarMenuState = 0
     }
-
-    console.log("Navbar Menu State: " + navbarMenuState)
 }
 
 function setNavbarBehavior(){
