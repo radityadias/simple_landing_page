@@ -2,6 +2,8 @@ var count = 0
 var navbarMenuState = 0
 
 setColors();
+console.log("Navbar Menu State: " + navbarMenuState);
+
 
 document.getElementById('button-month').addEventListener('click', function() {
     const x = document.getElementsByClassName('price');
@@ -68,6 +70,10 @@ function setColors() {
 }
 
 function onNavbarLinkClick() {
-    setNavbarState();
-    setNavbarBehavior();
+    if (navbarMenuState == 0) {
+        return
+    } else {
+        setNavbarState();
+        setNavbarBehavior();
+    }
 }
